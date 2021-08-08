@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-md-6">
+    {% for message in get_flashed_messages() %} 
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}  
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.email.label }}</span>
+            {{ form.email() }}
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.username.label }}</span>
+            {{ form.username() }}
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.password.label }}</span>
+            {{ form.password() }}
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.password2.label }}</span>
+            {{ form.password2() }}
+        </div>
+        {{ form.submit(class='btn btn-primary') }}
+
+        
+    </form>
+</div>
+{%endblock%}

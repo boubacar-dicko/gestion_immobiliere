@@ -1,0 +1,150 @@
+{% extends "main/mainviews/accueil.html" %}
+{% block content %}
+
+
+
+{% for bien in bien %}
+        <!-- <div id="modaledit{{bien.id}}" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+        
+        
+            <div class="modal-content">
+        
+        
+                <div class="modal-header">
+        
+        
+                    <h4 class="modal-title">Update Information</h4>
+        
+        
+                </div>
+        
+        
+                <div class="modal-body"> -->
+        
+        
+                    <form  method="POST">
+        
+        
+                        <div class="form-group">
+        
+        
+                        <label>Name:</label>
+                            <input type="hidden"  name="id" value="{{bien.id}}">
+        
+                        <input type="text" class="form-control" name="name" value="{{bien.name}}">
+        
+        
+                        </div>
+        
+
+                        <div class="form-group">
+        
+        
+                            <label>Type du Bien:</label>
+        
+                            <input type="text" class="form-control" name="typeBien" value="{{bien.typeBien}}">
+        
+        
+                        </div>
+        
+                        <div class="form-group">
+        
+        
+                            <label>Adresse du Bien:</label>
+        
+                            <input type="text" class="form-control" name="adresseBien" value="{{bien.adresseBien}}">
+        
+        
+                        </div>
+        
+                        <div class="form-group">
+        
+        
+                        <label>Description du Bien:</label>
+        
+                        <input type="text" class="form-control" name="descriptionBien" value="{{bien.descriptionBien}}">
+        
+        
+                        </div>
+
+                            <div class="form-group">
+        
+        
+                            <label>Prenom Proprietaire:</label>
+            
+                            <input type="text" class="form-control" name="firstname" value="{{bien.firstname}}">
+                            </div>
+
+                                  <div class="form-group">
+        
+        
+                                     <label>Nom du Proprietaire:</label>
+                
+                                   <input type="text" class="form-control" name="lastname" value="{{bien.lastname}}">
+                
+                
+                                </div>
+
+                                <div class="form-group">
+        
+        
+                                    <label>Adresse du Proprietaire:</label>
+                    
+                                    <input type="text" class="form-control" name="adresse" value="{{bien.adresse}}">
+                    
+                    
+                                </div>
+                                <div class="form-group">
+        
+        
+                                    <label>Numero telephone:</label>
+                    
+                                    <input type="text" class="form-control" name="telephone" value="{{bien.telephone}}">
+                    
+                    
+                                </div>
+
+                                <div class="form-group">
+        
+        
+                                    <label>Email:</label>
+                    
+                                    <input type="text" class="form-control" name="email" value="{{bien.email}}">
+                    
+                    
+                                </div>
+        
+        
+        
+                        <div class="form-group">
+        
+        
+                        <button class="btn btn-primary" type="submit">Update</button>
+        
+        
+                        </div>
+        
+        
+                    </form>
+        
+        
+                <!-- </div>
+        
+        
+                <div class="modal-footer">
+        
+        
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+        
+                </div>
+        
+        
+            </div>
+        
+        
+        </div> -->
+        {% endfor %}
+  
+    {%endblock%}

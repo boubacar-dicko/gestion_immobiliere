@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class='col-lg-5' >
+            <h2>Présentation de l'Application immobiliere</h2>
+            <div class='col-lg-12'>
+                
+            </div>
+        </div>
+        <div class='col-lg-2' ></div>
+        <div class='col-lg-5' >
+            <h3>liste des offres</h3>
+        </div>
+        <div class='col-md-12'></div>
+{% endblock %}
+{% block authentification %}
+        {% if current_user.is_authenticated %}
+            <li><a href="#">Mon profil</a></li>
+            <li><a href="{{ url_for('main.logout') }}">Déconexion</a></li>
+        {% else %}
+            <li><a href="{{ url_for('main.login') }}">Connexion</a></li>
+        {% endif %}
+{% endblock %}
+{% block bienvenue %}
+    {% if current_user.is_authenticated %}
+        Bienvenue {{current_user.username}} 
+    {% endif %}
+{% endblock %}

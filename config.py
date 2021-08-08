@@ -12,14 +12,14 @@ class DevelopmentConfig(Config):
     ENV='development'
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-    'mysql+pymysql://root:Soroc2022@localhost/gestionImmodev'
+    'mysql+pymysql://root:@localhost/gestionImmodev'
 
 
 
 class ProductionConfig(Config):
     ENV='production'
     SQLALCHEMY_DATABASE_URI = os.environ.get('PROD_DATABASE_URL') or \
-    'mysql+pymysql://root:Soroc2022@localhost/gestionImmoprod'
+    'mysql+pymysql://root:@localhost/gestionImmoprod'
 
 config = {
     'development': DevelopmentConfig,

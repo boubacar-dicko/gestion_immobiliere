@@ -1,0 +1,52 @@
+{% extends "main/mainviews/accueil.html" %}
+{% block content %}
+<div class="col-md-6">
+     
+    <form action="" class="" method="post">
+        {{ form.hidden_tag() }}
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.name.label }}</span>
+            {{ form.name() }}
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.typeBien.label }}</span>
+            {{ form.typeBien() }}
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.adresseBien.label }}</span>
+            {{ form.adresseBien() }}
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.descriptionBien.label }}</span>
+            {{ form.descriptionBien() }}
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.firstname.label }}</span>
+            {{ form.firstname() }}
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.lastname.label }}</span>
+            {{ form.lastname() }}
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.adresse.label }}</span>
+            {{ form.adresse() }}
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.email.label }}</span>
+            {{ form.email() }}
+        </div>
+        
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{ form.telephone.label }}</span>
+            {{ form.telephone() }}
+        </div>
+        {{ form.submit(class='btn btn-primary') }}
+
+        
+    </form>
+</div>
+{%endblock%}
