@@ -1,0 +1,33 @@
+{% extends "main/mainviews/accueil.html" %}
+{% block content %}
+
+
+<table class="table ">
+    <tr>
+        <td>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-success">Prenom du proprietaire</li>
+                <li class="list-group-item list-group-item-info">Nom du Proprietaire</li>
+                <li class="list-group-item list-group-item-warning">Email</li>
+                <li class="list-group-item list-group-item-danger">Adresse</li>
+                <li class="list-group-item list-group-item-danger">Phone</li>
+            </ul>
+        </td>
+        <td>
+        <div class="list-group">
+            <li  class="list-group-item list-group-item-success">{{bien.firstname}}</li>
+            <li  class="list-group-item list-group-item-info">{{bien.lastname}}</li>
+            <li  class="list-group-item list-group-item-warning">{{bien.email}}</li>
+            <li  class="list-group-item list-group-item-danger">{{bien.adresse}}</li>
+            <li  class="list-group-item list-group-item-danger">{{bien.telephone}}</li>
+        </div>
+        </td>
+    </tr>
+    <tr> 
+        <td class="col-md-2 offset-3">
+            <a href="{{ url_for('agent.listBien') }}" class="btn btn-warning btn-xl">Back List</a>
+       </td>
+    </tr>
+</table>
+
+  {%endblock%}

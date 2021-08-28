@@ -18,7 +18,7 @@ def addBien():
     form = BienForm()
     
     if form.validate_on_submit():
-        bien = Bien(name=form.name.data, typeBien=form.typeBien.data, adresseBien=form.adresseBien.data, descriptionBien=form.descriptionBien.data, firstname=form.firstname.data, lastname=form.lastname.data, adresse=form.adresse.data, email=form.email.data, telephone=form.telephone.data)
+        bien = Bien(name=form.name.data, typeBien=form.typeBien.data, adresseBien=form.adresseBien.data, descriptionBien=form.descriptionBien.data, firstname=form.firstname.data, lastname=form.lastname.data, adresse=form.adresse.data, email=form.email.data, telephone=form.telephone.data, user_id=current_user.id)
         db.session.add(bien)
         db.session.commit()
         flash('Bien enregistré avec succés!!!')
@@ -47,7 +47,7 @@ def deleteBien(id):
 @agent.route('/updateBien/<int:id>/', methods = ['GET', 'POST'])
 @login_required
 def updateBien(id):
-    all_bien = Bien.query.all()
+    all_bien = Bien.query.get(id)
     if request.method == 'POST':
         my_data = Bien.query.get(request.form.get('id'))
  
@@ -66,3 +66,11 @@ def updateBien(id):
  
         return redirect(url_for('agent.listBien'))
     return render_template("/agent/agentviews/updateBien.html", bien = all_bien)
+
+
+@agent.route('/showBien/<int:id>/', methods = ['GET', 'POST'])
+@login_required
+def showBien(id):
+    show_bien = Bien.query.get(id)
+
+    return render_template("/agent/agentviews/showBien.html", bien = show_bien)

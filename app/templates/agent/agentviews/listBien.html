@@ -7,11 +7,11 @@
  
     <tr>
 
-        <th>ID</th>
-        <th>name</th>
-        <th>type du bien</th>
+        <th>Details</th>
+        <th>Name</th>
+        <th>Type du bien</th>
         <th>Adresse du bien</th>
-        <th>description du bien</th>
+        <th>Description du bien</th>
         <th>Action</th>
 
     </tr>
@@ -19,7 +19,7 @@
 
    {% for row in bien %}
     <tr>
-        <td>{{row.id}}</td>
+        <td><a href="/showBien/{{row.id}}" class="btn btn-success btn-xs">Details</a></td>
         <td>{{row.name}}</td>
         <td>{{row.typeBien}}</td>
         <td>{{row.adresse}}</td>
